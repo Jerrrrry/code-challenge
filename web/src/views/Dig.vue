@@ -29,6 +29,7 @@ export default {
     async created() {
           
     },
+
     methods: {
           async sendQuery() {
             const res = await DigService.digRecord(this.query);
@@ -37,8 +38,11 @@ export default {
           updateRecord(index,record){
             this.query.record=record;
             this.active=index;
-          }
-    },
+          },
+          
+        
+      
+    }
 };
 </script>
     
@@ -81,8 +85,7 @@ export default {
               </select>
             </div> -->
             <div class="buttons">
-              <!--@click="updateRecord(index,item)"   :class="{is-active:index!=this.active}"--> 
-              <button v-for="(item, index) in items" class="button is-success is-small" @click="updateRecord(index,item)" >{{item}}</button>
+              <button v-for="(item, index) in items"  class="button is-success is-small" @click="updateRecord(index,item)" >{{item}}</button>
             </div>
           </div>
         </div>
