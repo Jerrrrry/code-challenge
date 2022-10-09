@@ -14,6 +14,8 @@ RUN go get -u github.com/gin-gonic/gin
 RUN go get -u github.com/weppos/dnscaa
 RUN go get -u golang.org/x/net/webdav
 RUN go get -u github.com/shuque/dane
+RUN go get -u github.com/miekg/dns
+RUN go get -u github.com/babolivier/go-doh-client
 RUN go build index.go
 EXPOSE 8080:8080
 CMD ["./index"]

@@ -62,16 +62,17 @@ export default {
               <select v-model="query.record">
                 <option>A</option>
                 <option>AAAA</option>
+                <option>ANY</option>
+                <option>CAA</option>
                 <option>CNAME</option>
                 <option>MX</option>
                 <option>NS</option>
                 <option>PTR</option>
-                <option>SRV</option>
-                <option>TXT</option>
                 <option>SOA</option>
-                <option>CAA</option>
+                <option>SRV</option>
                 <option>TLSA</option>
                 <option>TSIG</option>
+                <option>TXT</option>
               </select>
             </div>
           </div>
