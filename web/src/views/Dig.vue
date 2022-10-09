@@ -8,7 +8,9 @@ export default {
               domain:'',
               record:''
             },
+            items:["A","AAAA","ANY","CAA","CNAME","MX","NS","PTR","SOA","SRV","TLSA","TSIG","TXT"],
             records:'',
+            active:-1,
             showRecords:false
     
           }
@@ -28,11 +30,14 @@ export default {
           
     },
     methods: {
-         async sendQuery() {
+          async sendQuery() {
             const res = await DigService.digRecord(this.query);
             this.records =res.data.results
-          }, 
-          
+          },
+          updateRecord(index,record){
+            this.query.record=record;
+            this.active=index;
+          }
     },
 };
 </script>
@@ -58,7 +63,7 @@ export default {
         <div class="field" v-show="query.domain!=''">
           <label class="label">Record type</label>
           <div class="control">
-            <div class="select is-success">
+            <!-- <div class="select is-success">
               <select v-model="query.record">
                 <option>A</option>
                 <option>AAAA</option>
@@ -74,6 +79,10 @@ export default {
                 <option>TSIG</option>
                 <option>TXT</option>
               </select>
+            </div> -->
+            <div class="buttons">
+              <!--@click="updateRecord(index,item)"   :class="{is-active:index!=this.active}"--> 
+              <button v-for="(item, index) in items" class="button is-success is-small" @click="updateRecord(index,item)" >{{item}}</button>
             </div>
           </div>
         </div>
