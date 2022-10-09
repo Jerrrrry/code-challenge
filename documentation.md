@@ -1,4 +1,6 @@
-#### 
+# code challenge
+
+## Introduction
 cd to project folder 
 
 dev local prerequistes:
@@ -12,7 +14,7 @@ web is listening at localhost(127.0.0.1:80)
 
 gin-api is listening at localhost:8080
 
-# GIN API
+## GIN API
 cd /gin-api
 
 sh rebuild.sh
@@ -20,7 +22,7 @@ sh rebuild.sh
 build image and run a container 
 
 
-# WEB
+## WEB
 
 cd /web 
 
@@ -34,7 +36,7 @@ build image and run a container
 
 
 
-test cases:
+## test cases:
 
 1.
 domain :google
